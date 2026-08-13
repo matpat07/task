@@ -14,6 +14,9 @@ All data comes from the JSON passed by C++.
 
 import sys
 import io
+import os
+import json
+import csv
 
 # Add the python/ directory to the path so we can import sibling modules
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -127,7 +130,7 @@ def _output_health(result):
     print(f"  Branch : {repo['active_branch']}")
     print(f"  Commits: {repo['total_commits']}")
     print(f"  Files  : {repo['tracked_files']}")
-    print("This is a bug, remove this")
+    
 
 
 def _output_csv(result):
