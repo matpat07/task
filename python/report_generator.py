@@ -137,7 +137,9 @@ def generate_html_report(analysis, output_path):
 </html>"""
 
     # ensure output directory exists
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    output_dir = os.path.dirname(output_path)
+    if output_dir:
+      os.makedirs(output_dir, exist_ok=True)
     with open(output_path, "w") as f:
         f.write(html)
 
